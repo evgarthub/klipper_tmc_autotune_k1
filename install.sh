@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+
 yellow=`echo "\033[01;33m"`
 green=`echo "\033[01;32m"`
 red=`echo "\033[01;31m"`
