@@ -12,14 +12,6 @@ AUTOTUNETMC_PATH="/usr/data/klipper_tmc_autotune"
 set -eu
 export LC_ALL=C
 
-function preflight_checks {
-    if ! [ -f /etc/init.d/S55klipper_service ]; then
-        printf "[PRE-CHECK] Klipper service found! Continuing...\n\n"
-    else
-        echo "[ERROR] Klipper service not found, please install Klipper first!"
-    fi
-}
-
 function check_download {
     local autotunedirname autotunebasename
     autotunedirname="$(dirname ${AUTOTUNETMC_PATH})"
@@ -66,7 +58,6 @@ printf "======================================\n\n"
 
 
 # Run steps
-preflight_checks
 check_download
 link_extension
 restart_klipper
