@@ -1,7 +1,7 @@
 # [WIP] Klipper TMC Autotune for Creality K1
 
-This fork has changes to be compartible with custom software on K1
-Chnages made in comparison to original project:
+This fork includes changes that are reuired for autotune to be compatible with custom software on K1 printer.
+Changes made in comparison to original project:
 
 - Updated paths to Klipper
 - Removed checks for klipper service presense (lack of packages) and root user (as that's the only user available)
