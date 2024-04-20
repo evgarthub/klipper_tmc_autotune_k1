@@ -1,10 +1,5 @@
 #!/bin/sh
 
-yellow=`echo "\033[01;33m"`
-green=`echo "\033[01;32m"`
-red=`echo "\033[01;31m"`
-white=`echo "\033[m"`
-
 KLIPPER_PATH_K1_DEFAULT="/usr/share/klipper"
 KLIPPER_PATH=`curl localhost:7125/printer/info | jq -r .result.klipper_path`
 AUTOTUNETMC_PATH="/usr/data/klipper_tmc_autotune"
@@ -21,6 +16,7 @@ function check_download {
         echo "[DOWNLOAD] Downloading Autotune TMC repository..."
         if git -C $autotunedirname clone https://github.com/evgarthub/klipper_tmc_autotune_k1.git $autotunebasename; then
             chmod +x ${AUTOTUNETMC_PATH}/install.sh
+            chmod +x ${AUTOTUNETMC_PATH}/uninstall.sh
             printf "[DOWNLOAD] Download complete!\n\n"
         else
             echo "[ERROR] Download of Autotune TMC git repository failed!"
@@ -36,10 +32,10 @@ function link_extension {
 
     if [ x"$KLIPPER_PATH" == x"null" ]; then
         KLIPPER_PATH=KLIPPER_PATH_K1_DEFAULT
-        printf "${green} Falling back to default klipper path: $KLIPPER_PATH ${white}\n"
+        printf "Falling back to default klipper path: $KLIPPER_PATH\n"
     fi
 
-    printf "${green} Found klipper path: $KLIPPER_PATH ${white}\n"
+    printf "Found klipper path: $KLIPPER_PATH\n"
 
     ln -sf "${AUTOTUNETMC_PATH}/autotune_tmc.py" "${KLIPPER_PATH}/klippy/extras/autotune_tmc.py"
     ln -sf "${AUTOTUNETMC_PATH}/motor_constants.py" "${KLIPPER_PATH}/klippy/extras/motor_constants.py"
