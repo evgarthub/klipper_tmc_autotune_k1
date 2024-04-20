@@ -17,7 +17,6 @@ function preflight_checks {
         printf "[PRE-CHECK] Klipper service found! Continuing...\n\n"
     else
         echo "[ERROR] Klipper service not found, please install Klipper first!"
-        exit -1
     fi
 }
 
@@ -33,6 +32,7 @@ function check_download {
             printf "[DOWNLOAD] Download complete!\n\n"
         else
             echo "[ERROR] Download of Autotune TMC git repository failed!"
+            exit -1
         fi
     else
         printf "[DOWNLOAD] Autotune TMC repository already found locally. Continuing...\n\n"
