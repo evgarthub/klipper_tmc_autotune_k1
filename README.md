@@ -1,3 +1,14 @@
+# [WIP] Klipper TMC Autotune for Creality K1
+
+This fork has changes to be compartible with custom software on K1
+Chnages made in comparison to original project:
+
+- Updated paths to Klipper
+- Removed checks for klipper service presense (lack of packages) and root user (as that's the only user available)
+- Added missing `TMCtstepHelper` definition as older version of K1 Klipper doesn't have it
+- Added uninstall script
+
+
 # Klipper TMC Autotune
 
 Klipper extension for automatic configuration and tuning of TMC drivers.
