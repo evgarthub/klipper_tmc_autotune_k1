@@ -1,4 +1,4 @@
-# [WIP] Klipper TMC Autotune for Creality K1
+# Klipper TMC Autotune for Creality K1
 
 This fork includes changes that are required for autotune to be compatible with custom software on K1 printer.
 Changes made in comparison to original project:
@@ -8,6 +8,10 @@ Changes made in comparison to original project:
 - Added missing `TMCtstepHelper` definition as older version of K1 Klipper doesn't have it
 - Added uninstall script
 
+Notes:
+- Uninstall script is untested
+- I have Creality K1 running original firmware v1.3.3.8
+- Non-original stepper motors installed
 
 # Klipper TMC Autotune
 
